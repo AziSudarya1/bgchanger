@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background collor changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h1 id="judul" onclick="judd()">Mzya bgchanger</h1></center>
+    <div class="container">
+    <div id="title">Pilih Warna</div>
+   </button>
+    <div class="box">
+       <div class="circle yellow" onclick="newss()"></div>
+       <div class="circle green" onclick="newss1()"></div>
+       <div class="circle blue" onclick="newss2()" onmouseover="over()"></div>
+    </div>
+    <button class="refresh-button">Refresh Page</button>
+</div>
+
+<script>
+
+    
+
+        const circles = document.querySelectorAll (".circle")
+        circles.forEach(circle  =>{
+            circle.addEventListener("click", (style) =>{
+                const computedstyle = window.getComputedStyle(style.target)
+                document.body.style.backgroundColor = computedstyle.backgroundColor
+            })
+        })
+
+         const tit = document.getElementById("title")
+         function newss (){
+            tit.innerHTML = "Haii Ibuku"
+         }
+         const tit2 = document.getElementById("title")
+         function newss1 (){
+            tit2.innerHTML = "Berhasil Ataupun Gagal"
+         }
+         const tit3 = document.getElementById("title")
+         function newss2 (){
+            tit3.innerHTML = "Aku tetap Menjadi Anakmu kan, Bu?"
+         }
+
+         tit3.setAttribute('id', 'teks')
+         function over (){
+            document.getElementById('teks').style.color = 'red'
+         }
+         
+
+         function clik (){
+            tit3.style.color = 'white'
+         }
+        
+
+         const refreshButton = document.querySelector('.refresh-button');
+
+         const refreshPage = () => {
+           location.reload();
+         }
+         
+         refreshButton.addEventListener('click', refreshPage)
+
+    
+
+</script>
+</body>
+</html>
